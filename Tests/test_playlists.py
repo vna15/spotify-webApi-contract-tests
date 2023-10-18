@@ -1,6 +1,5 @@
 import json
 import unittest
-
 import jsonschema
 import pytest
 

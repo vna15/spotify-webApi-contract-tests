@@ -9,10 +9,10 @@ jobs:
       - name: Configurar o ambiente Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.1  # Substitua '3.x' pela versão do Python que você deseja usar
+          python-version: 3.11  # Substitua '3.x' pela versão do Python que você deseja usar
 
       - name: Restaurar cache de dependências
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.cache/zip
           key: pip-${{ runner.os }}-${{ hashFiles('**/*.txt') }}
@@ -25,10 +25,15 @@ jobs:
         if: steps.restore-cache.outputs.cache-hit != 'true'
 
       - name: Salvar cache de dependências
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.cache/pip
           key: pip-${{ runner.os }}-${{ hashFiles('**/*.txt') }}
+
+      - name: Adicionar caminho para o diretorio Requests
+        run: |
+            export export PYTHONPATH=$PYTHONPATH:https://github.com/vna15/spotify-webApi-contract-tests/blob/2496e8e572c452f9c4903d1f93ec27724d654afe/Requests:https://github.com/vna15/spotify-webApi-contract-tests/blob/2496e8e572c452f9c4903d1f93ec27724d654afe/Resources
+        working-directory: $GITHUB_WORKSPACE
 
       - name: Executar o script Python
         run: |
