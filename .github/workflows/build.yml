@@ -32,7 +32,12 @@ jobs:
 
       - name: Adicionar caminho para o diretorio Requests
         run: |
-            export export PYTHONPATH=$PYTHONPATH:https://github.com/vna15/spotify-webApi-contract-tests/blob/2496e8e572c452f9c4903d1f93ec27724d654afe/Requests:https://github.com/vna15/spotify-webApi-contract-tests/blob/2496e8e572c452f9c4903d1f93ec27724d654afe/Resources
+          export PYTHONPATH=$PYTHONPATH:https://github.com/vna15/spotify-webApi-contract-tests/blob/2496e8e572c452f9c4903d1f93ec27724d654afe/Requests
+        working-directory: $GITHUB_WORKSPACE
+
+      - name: Adicionar caminho para o diretorio Requests
+        run: |
+          export PYTHONPATH=$PYTHONPATH:https://github.com/vna15/spotify-webApi-contract-tests/blob/2496e8e572c452f9c4903d1f93ec27724d654afe/Resources
         working-directory: $GITHUB_WORKSPACE
 
       - name: Executar o script Python
