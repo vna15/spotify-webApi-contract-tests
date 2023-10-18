@@ -15,7 +15,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cache/zip
-          key: pip-${{ runner.os }}-${{ hashfiles('**/*.txt) }}
+          key: pip-${{ runner.os }}-${{ hashFiles('**/*.txt') }}
           restore/keys: |
             pip-${{ runner.os }}
 
@@ -28,7 +28,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: pip-${{ runner.os }}-${{ hashfiles('**/*.txt) }}
+          key: pip-${{ runner.os }}-${{ hashFiles('**/*.txt') }}
 
       - name: Executar o script Python
         run: |
