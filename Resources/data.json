@@ -1,0 +1,18 @@
+{
+  "client_id": "2a1f9e0c9326459e9d5a06e750f21622",
+  "client_secret": "7c41f3e34b3a47d3a8f39e03597e513e",
+  "callback_uri": "https://www.postman.com/oauth2/callback",
+  "scope": "playlist-modify-public playlist-modify-private playlist-read-private",
+  "token": {
+    "access_token": "BQBMNJ0hKK021PTpKxS7pHBw59qo2n6-uh52cNYG6NQg8syPNDL8QGBZPLMct1hHs8J9gIXE3XnrlFlSxm1UYDIoI65NODdJzQglYpo63hGOMgk_DFKy5MVA37IURmbtm_V-lzIDWPFgJvkj0semj-wyk56CHJJPJLkREGUA6HM-B9L-KkJnJhdv2HeOwC1nzayDvYV7weoErdzjRMbZ1l9iHReZ-tzqGKCb4FUcc3mwvJZ_a-cwxz9k_ESCDZFElZ1a51V0ig",
+    "token_type": "Bearer",
+    "expires_in": 3600,
+    "refresh_token": "AQDUHYQXMfz4mNaXTRR9b2panUAxoxW05zPWm6nRsOl4neM659oTATu6dLTh28yxjUcllZIZVy4W48OvfchvLNmQ5mJLAlC6EbujYeh3KsF6D6Vo1r6av2NwEQjcnZcUy4g",
+    "scope": [
+      "playlist-read-private",
+      "playlist-modify-private",
+      "playlist-modify-public"
+    ],
+    "expires_at": 1697652193.0665147
+  }
+}
