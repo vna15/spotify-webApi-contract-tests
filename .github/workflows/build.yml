@@ -30,16 +30,6 @@ jobs:
           path: ~/.cache/pip
           key: pip-${{ runner.os }}-${{ hashFiles('**/*.txt') }}
 
-      - name: Adicionar caminho para o diretorio Requests
-        run: |
-          export PYTHONPATH=$PYTHONPATH:Requests
-        working-directory: $GITHUB_WORKSPACE
-
-      - name: Adicionar caminho para o diretorio Resources
-        run: |
-          export PYTHONPATH=$PYTHONPATH:Resources
-        working-directory: $GITHUB_WORKSPACE
-
       - name: Executar o script Python
         run: |
          pytest .\Tests\test_playlists.py -s
