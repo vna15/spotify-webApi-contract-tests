@@ -11,6 +11,10 @@ jobs:
         with:
           python-version: 3.1  # Substitua '3.x' pela versão do Python que você deseja usar
 
+      - name: Instalar dependências
+        run: |
+          pip install requests_oauthlib requests pytest jsonschema
+
       - name: Executar o script Python
         run: |
          pytest .\Tests\test_playlists.py -s
