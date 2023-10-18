@@ -16,7 +16,7 @@ jobs:
         with:
           path: ~/.cache/zip
           key: pip-${{ runner.os }}-${{ hashFiles('**/*.txt') }}
-          restore/keys: |
+          restore-keys: |
             pip-${{ runner.os }}
 
       - name: Instalar dependências
