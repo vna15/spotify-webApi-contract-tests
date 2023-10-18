@@ -3,5 +3,14 @@ jobs:
   first-job:
     runs-on: windows-latest
     steps:
-      - run: node --version
-      - run: npm --version
+      - name: Verificar o repositório
+        uses: actions/checkout@v2
+
+      - name: Configurar o ambiente Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.1  # Substitua '3.x' pela versão do Python que você deseja usar
+
+      - name: Executar o script Python
+        run: |
+         pytest .\Tests\test_playlists.py -s
