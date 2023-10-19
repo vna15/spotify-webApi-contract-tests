@@ -3,9 +3,18 @@ import unittest
 import jsonschema
 import pytest
 
-from ..Requests.request_oauth2 import MyOauth2
-from ..Requests.requests import Requests
-from ..Resources import utils as Utils
+import os
+import sys
+
+# Obtém o diretório raiz do projeto
+diretorio_raiz = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+# Adiciona o diretório raiz ao PYTHONPATH
+sys.path.append(diretorio_raiz)
+
+from Requests.request_oauth2 import MyOauth2
+from Requests.requests import Requests
+from Resources import utils as Utils
 
 
 class PLaylists(unittest.TestCase):
