@@ -41,6 +41,16 @@ class PLaylists(unittest.TestCase):
         except:
             pytest.fail("JSON file received doesn't have the expected format \n", False)
 
+    def test_get_playlists_fail(self):
+        response = self.request.playlists_get(self.access_token, '22qezhjglgsamssh45nnfdexy')
+        assert response.status_code == 200
+
+        try:
+            playlists_schema = Utils.load_schema_file("playlists_schema_fail.json")
+            jsonschema.validate(json.loads(response.text), playlists_schema)
+        except:
+            pytest.fail("JSON file received doesn't have the expected format \n", False)
+
     # def test_create_new_playlist(self):
     #     body = {
     #         "name": "Playlist test code",
