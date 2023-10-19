@@ -14,22 +14,22 @@ jobs:
       - name: Restaurar cache de dependências
         uses: actions/cache@v3
         with:
-          path: ~/.cache/zip
-          key: pip-${{ runner.os }}-${{ hashFiles('**/*.txt') }}
+          path: ~/AppData/Local/pip/Cache
+          key: $${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
-            pip-${{ runner.os }}
+            ${{ runner.os }}-pip
 
       - name: Instalar dependências
+        if: steps.cacheStep.outputs.cache-hit != 'true'
         run: |
           pip install requests_oauthlib requests pytest jsonschema
-        if: steps.restore-cache.outputs.cache-hit != 'true'
 
-      - name: Salvar cache de dependências
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: pip-${{ runner.os }}-${{ hashFiles('**/*.txt') }}
+      #      - name: Salvar cache de dependências
+      #        uses: actions/cache@v2
+      #        with:
+      #          path: ~/.cache/pip
+      #          key: pip-${{ runner.os }}-${{ hashFiles('**/*.txt') }}
 
       - name: Executar o script Python
         run: |
-         pytest .\Tests\test_playlists.py -s
+          pytest .\Tests\test_playlists.py -s
