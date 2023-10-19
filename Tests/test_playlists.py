@@ -2,6 +2,8 @@ import json
 import unittest
 import jsonschema
 import pytest
+import sys
+sys.path.append('/Requests')
 
 from Requests.request_oauth2 import MyOauth2
 from Requests.requests import Requests
